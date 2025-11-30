@@ -1,0 +1,222 @@
+/* Enhanced Interactive Styles */
+.action-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.action-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  min-width: 160px;
+  margin-top: 4px;
+}
+
+.action-item {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.action-item:hover {
+  background: var(--background);
+}
+
+.mission-progress {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+  min-width: 40px;
+}
+
+.mission-status {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.priority-badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: var(--border);
+  color: var(--text-light);
+}
+
+.drone-preview {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--background);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.drone-preview-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+.drone-preview-card span {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Connection Status */
+.connection-status {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+.connection-status.connected {
+  background: #10B981;
+  color: white;
+}
+
+.connection-status.disconnected {
+  background: #EF4444;
+  color: white;
+}
+
+.connection-status.connecting {
+  background: #F59E0B;
+  color: white;
+}
+
+/* Live Update Indicator */
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: #10B981;
+  color: white;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  animation: pulse 2s infinite;
+}
+
+/* Enhanced Notifications */
+.notification-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid;
+  margin-bottom: 0.5rem;
+  animation: slideInRight 0.3s ease;
+}
+
+.notification-item.success {
+  border-left-color: #10B981;
+}
+
+.notification-item.warning {
+  border-left-color: #F59E0B;
+}
+
+.notification-item.error {
+  border-left-color: #EF4444;
+}
+
+.notification-item.info {
+  border-left-color: #3B82F6;
+}
+
+/* Mission Control Buttons */
+.btn-warning {
+  background: #F59E0B;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-warning:hover {
+  background: #D97706;
+  transform: translateY(-1px);
+}
+
+/* Responsive Mission Cards */
+@media (max-width: 768px) {
+  .mission-actions {
+    flex-direction: column;
+  }
+  
+  .mission-actions button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .action-menu {
+    left: auto;
+    right: 0;
+  }
+}
+
+/* Animation for live updates */
+@keyframes highlight {
+  0% { background-color: transparent; }
+  50% { background-color: rgba(16, 185, 129, 0.1); }
+  100% { background-color: transparent; }
+}
+
+.drone-card.updating {
+  animation: highlight 1s ease;
+}
+
+.mission-card.updating {
+  animation: highlight 1s ease;
+}
